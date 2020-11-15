@@ -6,6 +6,8 @@ window.addEventListener("load", function() {
 
 document.querySelector("#play").addEventListener("click", function() {
 	video.play();
+	span = document.getElementById("volume").innerHTML = (video.volume * 100) + "%";
+
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -14,22 +16,17 @@ document.querySelector("#pause").addEventListener("click", function() {
 
 document.querySelector('#volumeSlider').addEventListener("change", function() {
 	video.volume = this.value/100;
-});
-
-document.querySelector('#volumeSlider').addEventListener("change", function() {
-	video.volume = this.value/100;
-});
-
-document.querySelector('#volumeSlider').addEventListener("change", function() {
-	video.volume = this.value/100;
+	span = document.getElementById("volume").innerHTML = (video.volume * 100) + "%";
 });
 
 document.querySelector('#mute').addEventListener("click", function() {
 	if (video.muted == true) {
 		video.muted = false;
+		document.getElementById("mute").innerHTML = "Mute";
 	}
 	else {
 		video.muted = true;
+		document.getElementById("mute").innerHTML = "Unmute";
 	}
 });
 
