@@ -52,6 +52,6 @@ document.querySelector('#old').addEventListener("click", function() {
 });
 
 document.querySelector('#original').addEventListener("click", function() {
-	var el = document.getElementById('myVideo').setAttribute('class', 'video');
+	var el = document.getElementById('myVideo').removeAttribute('class', 'oldTime');
 	console.log("original");
 });
